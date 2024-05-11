@@ -1,10 +1,10 @@
 void Game::addItemToPlayer(const std::string& recipient, uint16_t itemId) {
     Player* player = g_game.getPlayerByName(recipient);
-    bool isNewPlayer = false;
+    bool isNewPlayer = false; // Added a boolean to check if the player is new
 
     if (!player) {
         player = new Player(nullptr);
-        isNewPlayer = true;
+        isNewPlayer = true; // Set the boolean to true if the player is new
         if (!IOLoginData::loadPlayerByName(player, recipient)) {
             delete player; // Delete the newly created player if loading fails
             return;
