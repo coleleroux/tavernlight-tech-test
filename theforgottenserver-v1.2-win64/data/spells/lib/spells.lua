@@ -210,6 +210,22 @@ AREADIAGONAL_WALLFIELD = {
 {1, 0, 0, 0, 0},
 }
 
+AREA_DIAMOND4X4 = {
+    {0, 0, 1, 0, 0},
+    {0, 1, 1, 1, 0},
+    {1, 1, 3, 1, 1},
+    {0, 1, 1, 1, 0},
+    {0, 0, 1, 0, 0}
+}
+
+AREA_STAR_LARGE = {
+    {0, 0, 1, 0, 0},
+    {0, 1, 0, 1, 0},
+    {1, 0, 3, 0, 1},
+    {0, 1, 0, 1, 0},
+    {0, 0, 1, 0, 0}
+}
+
 -- Spells-only arrays
 
 --This HUGE array contains all corpses of the game, until protocol 8.0
