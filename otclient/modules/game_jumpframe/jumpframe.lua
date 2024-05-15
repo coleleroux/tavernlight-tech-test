@@ -36,21 +36,21 @@ function offline()
 end
 
 function moveJumpButton(jumpButton, jumpFrame)
-  -- Generate random positions within the 300x300 pixel area of the JumpFrame
-  -- This ensures the button moves within the bounds of its parent frame
-  local randomX = math.random(0, jumpFrame:getWidth() - jumpButton:getWidth())
-  local randomY = math.random(0, jumpFrame:getHeight() - jumpButton:getHeight())
+  -- Get the center position of the jumpFrame
+  local frameCenterX = jumpFrame:getX() + jumpFrame:getWidth() / 2
+  local frameCenterY = jumpFrame:getY() + jumpFrame:getHeight() / 2
 
-  -- Move the jumpButton to the new position
-  -- setMarginTop and setMarginLeft are used to adjust the button's position
-  jumpButton:setMarginTop(randomY)
-  jumpButton:setMarginLeft(randomX)
+  -- Calculate the top-left corner of the 300x300 area centered around the frame's center
+  local areaStartX = frameCenterX - 150
+  local areaStartY = frameCenterY - 150
 
-  -- Toggle the button text between "Google" and "Jump"
-  -- This provides a visual feedback that the button was clicked
-  if jumpButton:getText() == "Jump" then
-    jumpButton:setText("Google")
-  else
-    jumpButton:setText("Jump")
-  end
+  -- Generate random positions within the 300x300 pixel area centered on the jumpFrame
+  local randomX = math.random(areaStartX+30, areaStartX + 300 - jumpButton:getWidth())
+  local randomY = math.random(areaStartY+30, areaStartY + 300 - jumpButton:getHeight())
+
+  -- Create a point structure if required by the setPosition method
+  local point = {x = randomX, y = randomY}
+
+  -- Use setPosition with a point structure
+  jumpButton:setPosition(point)
 end

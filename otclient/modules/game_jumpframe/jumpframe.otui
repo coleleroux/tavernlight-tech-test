@@ -40,12 +40,9 @@ MainWindow
   id: gameJumpFrame
   !text: tr('Jump Frame')
   size: 300 300
-  @onEscape: toggle()
 
   Button
     id: jumpClick
     !text: tr('Jump')
     width: 64
-    anchors.right: parent.right
-    anchors.bottom: parent.bottom
-    @onClick: toggle()
+    @onClick: moveJumpButton()
