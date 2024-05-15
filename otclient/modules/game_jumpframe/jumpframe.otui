@@ -37,8 +37,8 @@ FilterButton < Button
     color: green
 
 MainWindow
-  id: spelllistWindow
-  !text: tr('Jump')
+  id: gameJumpFrame
+  !text: tr('Jump Frame')
   size: 300 300
   @onEscape: toggle()
 
