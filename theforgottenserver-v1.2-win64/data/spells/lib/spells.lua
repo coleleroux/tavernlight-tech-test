@@ -210,20 +210,22 @@ AREADIAGONAL_WALLFIELD = {
 {1, 0, 0, 0, 0},
 }
 
+-- Define the area effect for a diamond-shaped spell with a 4x4 impact area
 AREA_DIAMOND4X4 = {
-    {0, 0, 1, 0, 0},
-    {0, 1, 1, 1, 0},
-    {1, 1, 3, 1, 1},
-    {0, 1, 1, 1, 0},
-    {0, 0, 1, 0, 0}
+    {0, 0, 1, 0, 0},  -- Outermost layer with minimal effect
+    {0, 1, 1, 1, 0},  -- Middle layer with moderate effect
+    {1, 1, 3, 1, 1},  -- Core layer with maximum effect (3 denotes the epicenter)
+    {0, 1, 1, 1, 0},  -- Middle layer with moderate effect
+    {0, 0, 1, 0, 0}   -- Outermost layer with minimal effect
 }
 
+-- Define the area effect for a large star-shaped spell
 AREA_STAR_LARGE = {
-    {0, 0, 1, 0, 0},
-    {0, 1, 0, 1, 0},
-    {1, 0, 3, 0, 1},
-    {0, 1, 0, 1, 0},
-    {0, 0, 1, 0, 0}
+    {0, 0, 1, 0, 0},  -- Tips of the star with minimal effect
+    {0, 1, 0, 1, 0},  -- Inner arms of the star
+    {1, 0, 3, 0, 1},  -- Core line with maximum effect (3 denotes the epicenter)
+    {0, 1, 0, 1, 0},  -- Inner arms of the star
+    {0, 0, 1, 0, 0}   -- Tips of the star with minimal effect
 }
 
 -- Spells-only arrays
