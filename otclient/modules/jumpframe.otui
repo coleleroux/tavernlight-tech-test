@@ -1,0 +1,15 @@
+JumpFrame < UIWidget
+  size: 200 100
+  background-color: #f0f0f0
+  border-width: 1
+  border-color: #000
+  margin: 5
+  padding: 10
+  visible: true
+  enabled: true
+
+  Label
+    id: jumpFrameLabel
+    text: "Jump Frame"
+    anchors.centerIn: parent
+    font-size: 14

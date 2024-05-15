@@ -1,0 +1,9 @@
+Module
+  name: game_jumpframe
+  description: Jump Frame Module
+  author: YourName
+  website: https://github.com/your-repo
+  sandboxed: true
+  scripts: [ jumpframe ]
+  @onLoad: init()
+  @onUnload: terminate()

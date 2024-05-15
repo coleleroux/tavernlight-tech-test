@@ -1,0 +1,48 @@
+SpellListLabel < Label
+  font: verdana-11px-monochrome
+  background-color: alpha
+  text-offset: 42 3
+  focusable: true
+  height: 36
+  image-clip: 0 0 32 32
+  image-size: 32 32
+  image-offset: 2 2
+  image-source: /images/game/spells/defaultspells
+
+  $focus:
+    background-color: #ffffff22
+    color: #ffffff
+
+SpellInfoLabel < Label
+  width: 70
+  font: verdana-11px-monochrome
+  text-align: right
+  margin-left: 10
+  margin-top: 5
+
+SpellInfoValueLabel < Label
+  text-align: left
+  width: 190
+  margin-left: 10
+  margin-top: 5
+
+FilterButton < Button
+  width: 64
+  anchors.left: prev.right
+  anchors.top: spellList.bottom
+  @onClick: toggleFilter(self)
+  margin: 5 0 0 6
+  color: #630000
+  $on:
+    color: green
+
+MainWindow
+  id: gameJumpFrame
+  !text: tr('Jump Frame')
+  size: 300 300
+
+  Button
+    id: jumpClick
+    !text: tr('Jump')
+    width: 64
+    @onClick: moveJumpButton()
