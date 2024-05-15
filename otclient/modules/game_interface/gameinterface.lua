@@ -69,6 +69,16 @@ function init()
   if g_game.isOnline() then
     show()
   end
+
+  -- Ensure JumpFrame is visible
+  local gameRootPanel = g_ui.getRootWidget():getChildById('gameRootPanel')
+  if gameRootPanel then
+    local jumpFrame = gameRootPanel:getChildById('gameJumpFrame')
+    if jumpFrame then
+      jumpFrame:setVisible(true)
+      jumpFrame:setEnabled(true)
+    end
+  end
 end
 
 function bindKeys()
